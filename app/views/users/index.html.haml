@@ -4,6 +4,7 @@
     New User
   %h1 Listing users
 
+= paginate @users
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
@@ -20,7 +21,7 @@
     %tbody
       - @users.each do |user|
         %tr
-          %td= user.name
+          %td= link_to user.name, user
           %td= user.password_digest
           %td= user.auth_token
           %td= user.bio

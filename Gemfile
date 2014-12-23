@@ -56,6 +56,8 @@ group :development, :test do
   gem "pry-rails"
   gem "pry-doc"
   gem "pry-byebug"
+  gem 'faker'
+  gem 'populator'
 end
 
 group :development, :test do
@@ -66,3 +68,5 @@ group :development, :test do
   gem "rb-fsevent", require: false
   gem "guard-rspec"
 end
+
+gem 'kaminari'
