@@ -13,6 +13,7 @@
         %th
         %th
         %th
+        %th Created_at
 
     %tbody
       - @bio_changes.each do |bio_change|
@@ -22,3 +23,4 @@
           %td= link_to 'Show', bio_change
           %td= link_to 'Edit', edit_bio_change_path(bio_change)
           %td= link_to 'Destroy', bio_change, :data => { confirm: 'Are you sure?' }, :method => :delete
+          %td= bio_change.created_at

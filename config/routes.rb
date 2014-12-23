@@ -4,7 +4,14 @@ Rails.application.routes.draw do
 
   resources :relationships
 
-  resources :users
+  resources :users do
+    member do
+      get 'bio_change_count'
+    end
+    collection do
+      get 'all_bio_changes'
+    end
+  end
 
   get 'sign_up' => "users#new", as: 'sign_up'
 
