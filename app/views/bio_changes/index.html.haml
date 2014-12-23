@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_bio_change_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Bio change
+  %h1 Listing bio_changes
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th User
+        %th Content
+        %th
+        %th
+        %th
+
+    %tbody
+      - @bio_changes.each do |bio_change|
+        %tr
+          %td=link_to bio_change.user.name, bio_change.user
+          %td= bio_change.content
+          %td= link_to 'Show', bio_change
+          %td= link_to 'Edit', edit_bio_change_path(bio_change)
+          %td= link_to 'Destroy', bio_change, :data => { confirm: 'Are you sure?' }, :method => :delete

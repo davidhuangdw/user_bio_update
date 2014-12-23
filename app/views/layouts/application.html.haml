@@ -5,7 +5,9 @@
     = render layout:'layouts/navbar' do
       %ul.nav.navbar-nav
         %li.active=link_to 'Home', root_path
-        %li=link_to_if current_user, 'users', users_path
+        - if current_user
+          %li=link_to 'users', users_path
+          %li=link_to 'bio_changes', bio_changes_path
       %ul.nav.navbar-nav.navbar-right
         - if current_user
           %li= link_to "Profile #{current_user.name}", current_user

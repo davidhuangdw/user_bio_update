@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223121232) do
+ActiveRecord::Schema.define(version: 20141223133125) do
+
+  create_table "bio_changes", force: true do |t|
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bio_changes", ["user_id"], name: "index_bio_changes_on_user_id"
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"

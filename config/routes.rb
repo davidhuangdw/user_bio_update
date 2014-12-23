@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :bio_changes
+
   resources :relationships
 
   resources :users

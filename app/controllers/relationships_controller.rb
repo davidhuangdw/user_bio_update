@@ -2,7 +2,7 @@ class RelationshipsController < ApplicationController
   before_action :set_relationship, only: [:show, :edit, :update, :destroy]
 
   def index
-    @relationships = Relationship.all
+    @relationships = Relationship.page(params[:page])
     respond_with @relationships
   end
 

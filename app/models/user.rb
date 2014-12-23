@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :followed_relationships, class_name:'Relationship', foreign_key: 'followed_id'
   has_many :followers, through: :followed_relationships, source: :follower
-
+  has_many :bio_updates, class_name:'BioChange', dependent: :destroy
 
   include Validatable
   has_secure_password
@@ -13,5 +13,8 @@ class User < ActiveRecord::Base
   before_create :generate_token
 
   include Followable
+  include BioChangeable
+
+
 
 end
