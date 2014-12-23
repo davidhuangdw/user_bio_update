@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_relationship_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Relationship
+  %h1 Listing relationships
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Follower
+        %th Followed
+        %th
+        %th
+        %th
+
+    %tbody
+      - @relationships.each do |relationship|
+        %tr
+          %td= relationship.follower
+          %td= relationship.followed
+          %td= link_to 'Show', relationship
+          %td= link_to 'Edit', edit_relationship_path(relationship)
+          %td= link_to 'Destroy', relationship, :data => { confirm: 'Are you sure?' }, :method => :delete

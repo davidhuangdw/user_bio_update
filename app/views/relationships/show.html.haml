@@ -1,0 +1,14 @@
+.page-header
+  = link_to relationships_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_relationship_path(@relationship), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show relationship
+
+%dl.dl-horizontal
+  %dt Follower:
+  %dd= @relationship.follower
+  %dt Followed:
+  %dd= @relationship.followed

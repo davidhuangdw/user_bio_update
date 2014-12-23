@@ -1,0 +1,9 @@
+= simple_form_for(@relationship) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :follower
+    = f.association :followed
+
+  .form-actions
+    = f.button :submit
