@@ -3,7 +3,7 @@ class BioChangesController < ApplicationController
   before_action :require_login
 
   def index
-    @bio_changes = BioChange.for_user(current_user).page(params[:page])
+    @bio_changes = BioChange.for_user(current_user).includes(:user).page(params[:page])
     respond_with @bio_changes
   end
 
