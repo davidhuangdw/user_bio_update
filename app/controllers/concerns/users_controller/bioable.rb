@@ -8,7 +8,7 @@ class UsersController
     end
 
     def all_bio_changes
-      @changes = BioChange.all
+      @changes = BioChange.page(params[:page])
       respond_to do |format|
         format.json {render json:@changes}
       end
