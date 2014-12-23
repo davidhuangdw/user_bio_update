@@ -1,0 +1,4 @@
+= simple_form_for current_user.follow_relationships.build(followed_id:user.id), remote: :true do |f|
+  = f.association :followed, as: :hidden
+  = f.association :follower, as: :hidden
+  = f.submit 'Follow', class: 'btn btn-primary'

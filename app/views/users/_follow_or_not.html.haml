@@ -1,0 +1,6 @@
+%div{id: user.follow_form_id}
+  - if current_user.try(:not_me?, user)
+    - if current_user.follow?(user)
+      = render partial:'users/unfollow', locals:{user:user}
+    - else
+      = render partial:'users/follow', locals:{user:user}

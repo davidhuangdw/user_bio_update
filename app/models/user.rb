@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   include Tokenable
   before_create :generate_token
 
+  include Followable
+
 end

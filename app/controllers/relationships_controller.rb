@@ -22,6 +22,7 @@ class RelationshipsController < ApplicationController
 
     respond_with do |format|
       if @relationship.save
+        @user = @relationship.followed
         format.html { redirect_to @relationship, notice: 'Relationship was successfully created.' }
         format.json { render json: @relationship, status: :created }
       else
@@ -46,6 +47,7 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
+    @user = @relationship.followed
     @relationship.destroy
     respond_with do |format|
       format.html { redirect_to relationships_url }

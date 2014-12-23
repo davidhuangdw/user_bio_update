@@ -9,9 +9,10 @@
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
+        %th Follow
         %th Name
-        %th Password digest
-        %th Auth token
+        -#%th Password digest
+        -#%th Auth token
         %th Bio
         %th Bio update count
         %th
@@ -21,9 +22,10 @@
     %tbody
       - @users.each do |user|
         %tr
+          %td= render 'users/follow_or_not', user:user
           %td= link_to user.name, user
-          %td= user.password_digest
-          %td= user.auth_token
+          -#%td= user.password_digest
+          -#%td= user.auth_token
           %td= user.bio
           %td= user.bio_update_count
           %td= link_to 'Show', user
