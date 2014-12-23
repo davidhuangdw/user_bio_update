@@ -4,7 +4,9 @@ class BioChangesController < ApplicationController
 
   def index
     @bio_changes = BioChange.for_user(current_user).includes(:user).page(params[:page])
-    respond_with @bio_changes
+    respond_with @bio_changes do  |format|
+      format.json {render json: BioChange.page(params[:page])}
+    end
   end
 
   def show

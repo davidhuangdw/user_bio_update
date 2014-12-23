@@ -7,6 +7,6 @@ rake db:populate:clean  (clean all users)
 
 ### Apis:
 
-/users/all_bio_changes.json (all bio changes -- was paginated, could provide query_param params[:page])
+/bio_changes.json (all bio changes -- was paginated, could provide query_param params[:page])
 
 /users/:id/bio_change_count.json (bio change count for user of :id)
